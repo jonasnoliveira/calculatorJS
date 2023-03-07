@@ -1,4 +1,4 @@
-button{
+button {
   width: 3em;
   height: 3em;
   font-size: 1.5em;
@@ -7,29 +7,36 @@ button{
   margin: 0.3em;
 }
 
-button:hover{
+@media screen and (max-width: 600px) {
+  button {
+    width: 2.5em;
+    height: 2.5em;
+  }
+}
+
+button:hover {
   cursor: pointer;
 }
 
-.wrapper{
+.wrapper {
   background-color: black;
   border-radius: 1em;
   padding: 1em;
 }
 
-.orange{
-  background-color: #FF9500;
+.orange {
+  background-color: #ff9500;
   color: white;
 }
 
-.gray{
+.gray {
   background-color: #505050;
   color: white;
 }
-.result{
+.result {
   color: white;
   display: flex;
   justify-content: flex-end;
   margin-right: 1em;
-  font-size:3.5em;
+  font-size: 3.5em;
 }
