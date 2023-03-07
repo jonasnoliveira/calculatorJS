@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Numeral from "react-numeral";
 import "./Calculator.css";
 import Container from "@mui/material/Container";
 import { Box } from "@mui/system";
@@ -46,9 +47,6 @@ export default function Calculator() {
     } else if (operator === "X") {
       setNum(parseFloat(oldnum) * parseFloat(num));
     } else if (operator === "-") {
-      console.log(oldnum);
-      console.log(num);
-      console.log(oldnum - num);
       setNum(parseFloat(oldnum) - parseFloat(num));
     } else if (operator === "+") {
       setNum(parseFloat(oldnum) + parseFloat(num));
@@ -62,7 +60,11 @@ export default function Calculator() {
       <Container maxWidth="xs">
         <div className="wrapper">
           <Box m={12} />
-          <h1 className="result">{num}</h1>
+          <Numeral
+            className="result"
+            format={"0.00"}
+            value={num !== 0 ? num : "0"}
+          />
           <button onClick={clear}>AC</button>
           <button onClick={changeSign}>+/-</button>
           <button onClick={porcentage}>%</button>
